@@ -22,5 +22,4 @@ main() {
   // (is, some, simple, markov, chain)
   // (is, a, simple, magic)
   // (is, a, wild, ride)
-
 }
