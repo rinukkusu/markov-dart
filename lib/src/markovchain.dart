@@ -22,7 +22,7 @@ class MarkovChain<T> {
     items.forEach((item) {
       var key = new ChainState<T>(previous);
 
-      addState(key, item, weight);
+      _addState(key, item, weight);
 
       previous.addLast(item);
       if (previous.length > _order) previous.removeFirst();
@@ -34,16 +34,7 @@ class MarkovChain<T> {
         : weight;
   }
 
-  void addPrevious(Iterable<T> previous, T item, [int weight = 1]) {
-    var state = new Queue<T>.from(previous);
-    while (state.length > _order) {
-      state.removeFirst();
-    }
-
-    addState(new ChainState<T>(state), item, weight);
-  }
-
-  void addState(ChainState<T> state, T next, [int weight = 1]) {
+  void _addState(ChainState<T> state, T next, [int weight = 1]) {
     Map<T, int> weights;
 
     if (_items.containsKey(state)) {
@@ -74,10 +65,10 @@ class MarkovChain<T> {
       state.removeFirst();
     }
 
-    return getNextStatesByChainState(new ChainState<T>(state));
+    return _getNextStatesByChainState(new ChainState<T>(state));
   }
 
-  Map<T, int> getNextStatesByChainState(ChainState<T> state) {
+  Map<T, int> _getNextStatesByChainState(ChainState<T> state) {
     Map<T, int> weights = null;
     if (_items.containsKey(state)) {
       weights = new Map.from(_items[state]);
