@@ -1,14 +1,14 @@
 name: markov_dart
 description: A dart library for creating markov chains inspired by otac0n/markov.
-version: 0.1.0
+version: 0.2.0
 author: 'rinukkusu <rinukkusu@auen.land>'
 homepage: https://github.com/rinukkusu/markov-dart
 
 environment:
-  sdk: '>=1.0.0 <2.0.0'
+  sdk: '>=2.0.0 <3.0.0'
 
 #dependencies:
 #  lib_name: any
 
 dev_dependencies:
-  test: '>=0.12.0 <0.13.0'
+  test: ^1.0.0

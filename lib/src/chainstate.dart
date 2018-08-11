@@ -25,7 +25,7 @@ class ChainState<T> {
   }
 
   @override
-  bool operator ==(ChainState other) {
+  bool operator == (other) {
     if (other == null) return false;
 
     if (this._items.length != other._items.length) return false;
